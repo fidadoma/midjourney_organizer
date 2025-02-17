@@ -2,12 +2,14 @@ library(fs)
 library(purrr)
 library(tidyverse)
 library(progressr)
+library(stringdist)
 
 # load prompts
 actual_prompts <- readxl::read_excel("data/dalle_images_train_stations.xlsx")
 
 # analyze prompts for duplicates
 
+compute_most_similar_pairs(actual_prompts)
 
 # unzip files
 unzip_all_files("data/zip_files","data/unzip_files")
